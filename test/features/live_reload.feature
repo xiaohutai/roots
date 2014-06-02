@@ -7,3 +7,7 @@ Feature: Live reloading of the browser
   Scenario: Reloading on file change
     When I replace "views/index.jade" with "<h1><span>wow such magic</span></h1>"
     Then I should see a "h1" tag with "wow such magic"
+
+  Scenario: Showing errors
+    When I replace "views/index.jade" with "!¡™£=–åçççç!=!=)(U*Q(*)HhÅ‚Ó‡·"
+    Then I should see the error prompt

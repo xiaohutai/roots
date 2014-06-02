@@ -8,3 +8,6 @@ module.exports = ->
 
   @Then /^I should see a "([^"]*)" tag with "([^"]*)"$/, (tag, content) ->
     new @Widget({root: tag}).read("span").should.eventually.eql(content)
+
+  @Then /^I should see the error prompt$/, ->
+    new @Widget({root: "p"}).find()
